@@ -10,6 +10,7 @@ export default defineConfig({
       input: {
         app: './public/index.html',
       },
+      outDir: '../build'
     },
   },
 });
