@@ -6,9 +6,4 @@ import svgr from 'vite-plugin-svgr';
 export default defineConfig({
   plugins: [react(), svgr()],
   base: "/dogs-social-media",
-  build: {
-    rollupOptions: {
-      outDir: '../build'
-    },
-  },
 });
