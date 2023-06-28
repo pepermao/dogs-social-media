@@ -7,6 +7,7 @@ import { PASSWORD_RESET } from '../../Api';
 import Error from '../Helper/Error';
 import { useNavigate } from 'react-router-dom';
 import Head from '../Helper/Head';
+import BASE_URL from '../../../BASE_URL';
 
 const LoginPasswordReset = () => {
   const [login, setLogin] = React.useState('');
@@ -32,7 +33,7 @@ const LoginPasswordReset = () => {
         password: password.value,
       });
       const { response } = await request(url, options);
-      if (response.ok) navigate('/login');
+      if (response.ok) navigate(`/${BASE_URL}/login`);
     }
   }
 

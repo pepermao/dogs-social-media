@@ -1,0 +1,1 @@
+export default "dogs-social-media"

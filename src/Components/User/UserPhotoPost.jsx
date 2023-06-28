@@ -8,6 +8,7 @@ import Error from '../Helper/Error';
 import { PHOTO_POST } from '../../Api';
 import { useNavigate } from 'react-router-dom';
 import Head from '../Helper/Head';
+import BASE_URL from '../../../BASE_URL';
 
 const UserPhotoPost = () => {
   const nome = useForm();
@@ -18,7 +19,7 @@ const UserPhotoPost = () => {
   const navigate = useNavigate();
 
   React.useEffect(() => {
-    if (data) navigate('/conta');
+    if (data) navigate(`/${BASE_URL}/conta`);
   }, [data, navigate]);
 
   function handleSubmit(event) {

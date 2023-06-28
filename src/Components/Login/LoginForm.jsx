@@ -8,6 +8,7 @@ import Error from '../Helper/Error';
 import styles from './LoginForm.module.css';
 import stylesBtn from '../Forms/Button.module.css';
 import Head from '../Helper/Head';
+import BASE_URL from '../../../BASE_URL';
 
 const LoginForm = () => {
   const username = useForm();
@@ -37,13 +38,13 @@ const LoginForm = () => {
         )}
         <Error error={error && 'Dados incorretos.'} />
       </form>
-      <Link className={styles.perdeu} to="/login/perdeu">
+      <Link className={styles.perdeu} to={`/${BASE_URL}/login/perdeu`}>
         Perdeu a Senha?
       </Link>
       <div className={styles.cadastro}>
         <h2 className={styles.subtitle}>Cadastre-se</h2>
         <p>Ainda não possui conta? Cadastre-se no site.</p>
-        <Link className={stylesBtn.button} to="/login/criar">
+        <Link className={stylesBtn.button} to={`/${BASE_URL}/login/criar`}>
           Cadastro
         </Link>
       </div>

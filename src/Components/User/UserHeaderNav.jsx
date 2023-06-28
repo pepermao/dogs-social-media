@@ -7,13 +7,14 @@ import { ReactComponent as AdicionarFoto } from '../../Assets/adicionar.svg';
 import { ReactComponent as Sair } from '../../Assets/sair.svg';
 import styles from './UserHeaderNav.module.css';
 import useMedia from '../../Hooks/useMedia';
+import BASE_URL from '../../../BASE_URL';
 
 const UserHeaderNav = () => {
   const { userLogout } = React.useContext(UserContext);
   const navigate = useNavigate();
   function handleLogout() {
     userLogout();
-    navigate('/login');
+    navigate(`/${BASE_URL}/login`);
   }
   const mobile = useMedia('(max-width: 40rem)');
   const [mobileMenu, setMobileMenu] = React.useState(false);
@@ -40,15 +41,15 @@ const UserHeaderNav = () => {
           mobileMenu && styles.navMobileActive
         }`}
       >
-        <NavLink to="/conta" end>
+        <NavLink to={`/${BASE_URL}/conta`} end>
           <MinhasFotos />
           {mobile && 'Minhas Fotos'}
         </NavLink>
-        <NavLink to="/conta/estatisticas">
+        <NavLink to={`/${BASE_URL}/conta/estatisticas`}>
           <Estatisticas />
           {mobile && 'Estatísticas'}
         </NavLink>
-        <NavLink to="/conta/postar">
+        <NavLink to={`/${BASE_URL}/conta/postar`}>
           <AdicionarFoto />
           {mobile && 'Adicionar Foto'}
         </NavLink>

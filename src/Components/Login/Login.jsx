@@ -7,11 +7,12 @@ import LoginPasswordReset from './LoginPasswordReset';
 import { UserContext } from '../../UserContext';
 import styles from './Login.module.css';
 import NotFound from '../NotFound';
+import BASE_URL from '../../../BASE_URL';
 
 const Login = () => {
   const { login } = React.useContext(UserContext);
 
-  if (login === true) return <Navigate to="/conta" />;
+  if (login === true) return <Navigate to={`/${BASE_URL}/conta`} />;
   return (
     <section className={styles.login}>
       <div className={styles.forms}>

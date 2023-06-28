@@ -11,6 +11,7 @@ import ProtectedRoute from './Components/Helper/ProtectedRoute';
 import Photo from './Components/Photo/Photo';
 import UserProfile from './Components/User/UserProfile';
 import NotFound from './Components/NotFound';
+import BASE_URL from '../BASE_URL';
 
 function App() {
   return (
@@ -20,18 +21,18 @@ function App() {
           <Header />
           <main className="AppBody">
             <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="login/*" element={<Login />} />
+              <Route path={`/${BASE_URL}`} element={<Home />} />
+              <Route path={`/${BASE_URL}/login/*`} element={<Login />} />
               <Route
-                path="conta/*"
+                path={`/${BASE_URL}/conta/*`}
                 element={
                   <ProtectedRoute>
                     <User />
                   </ProtectedRoute>
                 }
               />
-              <Route path="foto/:id" element={<Photo />} />
-              <Route path="perfil/:user" element={<UserProfile />} />
+              <Route path={`/${BASE_URL}/foto/:id`} element={<Photo />} />
+              <Route path={`/${BASE_URL}/perfil/:user`} element={<UserProfile />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>

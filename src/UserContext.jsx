@@ -1,6 +1,7 @@
 import React from 'react';
 import { TOKEN_POST, TOKEN_VALIDATE_POST, USER_GET } from './Api';
 import { useNavigate } from 'react-router-dom';
+import BASE_URL from '../BASE_URL';
 
 export const UserContext = React.createContext();
 
@@ -37,7 +38,7 @@ export const UserStorage = ({ children }) => {
       const { token } = await tokenRes.json();
       window.localStorage.setItem('token', token);
       await getUser(token);
-      navigate('/conta');
+      navigate(`/${BASE_URL}/conta`);
     } catch (err) {
       setError(err.message);
       setLogin(false);
