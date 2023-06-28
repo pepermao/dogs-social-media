@@ -7,9 +7,6 @@ export default defineConfig({
   plugins: [react(), svgr()],
   build: {
     rollupOptions: {
-      input: {
-        app: './public/index.html',
-      },
       outDir: '../build'
     },
   },
